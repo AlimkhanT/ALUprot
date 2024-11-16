@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BudgetBuddy Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Include Chart.js library -->
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <aside>
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="transactions.html">Transactions</a></li>
+            <li><a href="reports.html">Reports</a></li>
+            <li><a href="settings.html">Settings</a></li>
+            <li><a href="#" id="logoutBtn">Log Out</a></li>
+        </ul>
+    </aside>
+    
+    <div class="main-content">
+        <!-- Header -->
+        <header>
+            <h1>ALU</h1>
+            <div class="header-right">
+                <span>Welcome, <strong id="username">Alimkhan</strong></span>
+                <button id="logoutButton">Log Out</button>
+            </div>
+        </header>
+
+        <!-- Content Section -->
+        <main>
+            <!-- Balance Information Section -->
+            <section class="balance-info">
+                <div>Balance: <span id="balance">$0.00</span></div>
+                <div>Profit: <span id="profit">$0.00</span></div>
+                <div>Expenditures: <span id="expenditures">$0.00</span></div>
+            </section>
+
+            <!-- File Upload Section -->
+            <section class="upload-section">
+                <h3>Upload Financial Data</h3>
+                <input type="file" id="fileInput" name="file" accept=".csv, .txt" required>
+                <button onclick="uploadData()">Upload Data</button>
+            </section>
+
+            <!-- Growth Information Section (optional) -->
+            <section class="growth-info">
+                <h2>Growth Information</h2>
+                <div class="growth-item">
+                    <span>Revenue Growth:</span> <span id="revenueGrowth">0%</span>
+                </div>
+                <div class="growth-item">
+                    <span>Expenditure Growth:</span> <span id="expenditureGrowth">0%</span>
+                </div>
+            </section>
+            
+
+            <!-- Chart Section for Weekly/Monthly Data -->
+            <section class="chart-section">
+                <h2>Profit & Expenditures for the Week/Month</h2>
+                <canvas id="budgetChart"></canvas>
+            </section>
+           
+
+            <section class="recommendations-section">
+                <h3 class="section-title">AI Recommendations</h3>
+                <div class="recommendations-box">
+                    <p id="aiRecommendations">Loading recommendations...</p>
+                </div>
+            </section>
+    
+            <!-- Expenditure Forecast Section -->
+            <section class="forecast-section">
+                <h3 class="section-title">Expenditure Forecast</h3>
+                <div class="forecast-box">
+                    <pre id="expenditureForecast">Loading forecast...</pre>
+                </div>
+            </section>
+    
+            
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+</html>

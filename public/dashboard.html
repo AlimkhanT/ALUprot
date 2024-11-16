@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js CDN -->
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Welcome to Your Dashboard</h1>
+        <div class="header-right">
+            <button onclick="logout()">Logout</button>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside>
+        <ul>
+            <li><a href="index.html">Overview</a></li>
+            <li><a href="#">Expenditures</a></li>
+            <li><a href="#">Profits</a></li>
+            <li><a href="#">Reports</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+        <h2>Financial Overview</h2>
+
+        <!-- Chart Section -->
+        <section class="chart-section">
+            <h3>Weekly Expenditures and Profit</h3>
+            <canvas id="financialChart"></canvas>
+        </section>
+
+        <!-- Upload File Section -->
+        <section class="upload-section">
+            <h3>Upload Financial Data</h3>
+            <form id="uploadForm" enctype="multipart/form-data">
+                <input type="file" id="fileInput" name="file" accept=".csv, .json" required>
+                <button type="button" onclick="uploadData()">Upload</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
